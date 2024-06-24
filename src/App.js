@@ -23,5 +23,5 @@ function App() {
     </div>
   );
 }
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root1'));
 export default App;
