@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/App.js',
+  entry: './src/App.tsx',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'public'),
@@ -19,9 +19,22 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(tsx|ts)?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   }
 };
